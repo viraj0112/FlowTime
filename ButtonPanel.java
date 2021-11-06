@@ -26,4 +26,12 @@ public class ButtonPanel extends JPanel{
 		clear.setFont(new Font("MONOSPACED",Font.PLAIN,18));
 		this.add(clear);
 	}
+
+	public JButton getAddTask(){
+		return addTask;
+	}
+
+	public JButton getClear(){
+		return clear;
+	}
 }

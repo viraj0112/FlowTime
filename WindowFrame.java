@@ -1,11 +1,16 @@
 import javax.swing.JFrame;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JButton;
+
 
 public class WindowFrame extends JFrame{
 	TitleBar title;
 	ButtonPanel btnPanel;
 	List list;
+	JButton addTask, clear;
 
 	WindowFrame(){
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -18,10 +23,26 @@ public class WindowFrame extends JFrame{
 		this.add(title,BorderLayout.NORTH);
 		this.add(btnPanel,BorderLayout.SOUTH);
 		this.add(list,BorderLayout.CENTER);
-		// this.add(Task,)
+
+		addTask=btnPanel.getAddTask();
+		clear= btnPanel.getClear();
+
+		addListeners();
+
 		this.pack();
 		this.setVisible(true);
 	}
+
+	public void addListeners(){
+		addTask.addMouseListener(new MouseAdapter(){
+			public void mousePressed(MouseEvent e){
+				Task task= new Task();
+				list.add(task);
+				revalidate();
+			}
+		});
+	}
+
 	public static void main(String[] args) {
 		new WindowFrame();	
 	}
