@@ -10,7 +10,7 @@ public class WindowFrame extends JFrame{
 	TitleBar title;
 	ButtonPanel btnPanel;
 	List list;
-	JButton addTask, clear;
+	JButton addTask, done, clear;
 
 	WindowFrame(){
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,6 +38,13 @@ public class WindowFrame extends JFrame{
 			public void mousePressed(MouseEvent e){
 				Task task= new Task();
 				list.add(task);
+				list.updateNumbers();
+
+				task.getDone().addMouseListener(new MouseAdapter(){
+					public void mousePressed(MouseEvent e){
+						task.changeState();
+					}
+				});
 				revalidate();
 			}
 		});

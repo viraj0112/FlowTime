@@ -10,7 +10,7 @@ import java.awt.Dimension;
 public class Task extends JPanel{
 	JLabel srno;
 	JTextField taskName;
-	JButton done,complete;
+	JButton done;
 	Boolean status;
 
 	Task(){
@@ -35,5 +35,20 @@ public class Task extends JPanel{
 		done.setBorder(BorderFactory.createEmptyBorder());
 
 		this.add(done,BorderLayout.EAST);
+	}
+
+	public void changeIndex(int num){
+		this.srno.setText(num+"");
+		this.revalidate();
+	}
+
+	public void changeState(){
+		this.setBackground(Color.green);
+		taskName.setBackground(Color.green);
+		status=true;
+	}
+
+	public JButton getDone(){
+		return done;
 	}
 }
