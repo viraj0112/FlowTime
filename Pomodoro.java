@@ -21,7 +21,7 @@ public class Pomodoro extends JPanel implements ActionListener{
 
 		public void actionPerformed(ActionEvent e){
 
-			elapsedTime+=100000;
+			elapsedTime+=1000;
 			hours=elapsedTime/3600000;
 			min=(elapsedTime/60000)%60;
 			sec=(elapsedTime/1000)%60;
