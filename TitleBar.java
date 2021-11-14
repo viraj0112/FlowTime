@@ -1,8 +1,6 @@
-import javax.swing.JPanel;
-import java.awt.Dimension;
-import javax.swing.JLabel;
-import java.awt.Font;
-
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class TitleBar extends JPanel{
 

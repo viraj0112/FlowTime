@@ -1,11 +1,6 @@
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import javax.swing.JTextField;
-import java.awt.Dimension;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class Task extends JPanel{
 	JLabel srno;
@@ -14,7 +9,7 @@ public class Task extends JPanel{
 	Boolean status;
 
 	Task(){
-		this.setPreferredSize(new Dimension(40,20));
+		this.setPreferredSize(new Dimension(350,40));
 		this.setLayout(new BorderLayout());
 
 		status=false;
@@ -24,7 +19,7 @@ public class Task extends JPanel{
 		srno.setHorizontalAlignment(JLabel.CENTER);
 		this.add(srno,BorderLayout.WEST);
 
-		taskName= new JTextField("Enter your task");
+		taskName= new JTextField(" Enter your task");
 		taskName.setBorder(BorderFactory.createEmptyBorder());
 		taskName.setBackground(Color.gray);
 
@@ -43,12 +38,15 @@ public class Task extends JPanel{
 	}
 
 	public void changeState(){
-		this.setBackground(Color.green);
 		taskName.setBackground(Color.green);
 		status=true;
 	}
 
 	public JButton getDone(){
 		return done;
+	}
+
+	public boolean getStatus(){
+		return status;
 	}
 }
