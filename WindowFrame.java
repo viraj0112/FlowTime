@@ -15,7 +15,7 @@ public class WindowFrame extends JFrame{
 
 	WindowFrame(){
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setTitle("StudentApp");
+		this.setTitle("TempoBoy");
 		this.setPreferredSize(new Dimension(800,650));
 
 		pomodoro=new Pomodoro();
