@@ -20,16 +20,16 @@ public class List extends JPanel{
 		}
 	}
 
-	// public void removeTask(){
-	// 	Component[] listItems= this.getComponents();
+	public void removeTask(){
+		Component[] listItems= this.getComponents();
 
-	// 	for(int i=0;i<listItems.length;i++){
-	// 		if(listItems[i] instanceof Task){
-	// 			System.out.println((Task)listItems[i].getStatus());
-	// 				// this.remove(i);
-	// 				// This part is still no confirm
-	// 		}
-	// 	}
+		for(int i=0;i<listItems.length;i++){
+			if(listItems[i] instanceof Task){
+					if(((Task)listItems[i]).getStatus()==true){
+					this.remove((Task)listItems[i]);
+				};
+			}
+		}
 
-	// }
+	}
 }

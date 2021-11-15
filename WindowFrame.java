@@ -59,12 +59,14 @@ public class WindowFrame extends JFrame{
 			}
 		});
 
-		// clear.addMouseListener(new MouseAdapter(){
-		// 	public void mousePressed(MouseEvent a){
-		// 		list.removeTask();
-		// 		repaint();
-		// 	}
-		// });
+		clear.addMouseListener(new MouseAdapter(){
+			public void mousePressed(MouseEvent a){
+				list.removeTask();
+				list.updateNumbers();
+				repaint();
+			}
+		});
+		revalidate();
 	}
 
 	public static void main(String[] args) {
