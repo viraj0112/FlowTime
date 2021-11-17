@@ -9,7 +9,7 @@ public class Task extends JPanel{
 	Boolean status;
 
 	Task(){
-		this.setPreferredSize(new Dimension(350,40));
+		this.setPreferredSize(new Dimension(370,40));
 		this.setLayout(new BorderLayout());
 
 		status=false;

@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class List extends JPanel{
 	List(){
-		GridLayout layout= new GridLayout(10,1);
+		GridLayout layout= new GridLayout(20,1,7,1);
 		layout.setVgap(5);
 		this.setLayout(layout);
 	}

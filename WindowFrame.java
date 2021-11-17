@@ -2,8 +2,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-// import javax.swing.JScrollPane;
-
 
 public class WindowFrame extends JFrame{
 	TitleBar title;
@@ -17,19 +15,20 @@ public class WindowFrame extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("TempoBoy");
 		this.setPreferredSize(new Dimension(800,650));
+		// this.setBackground(Color.(0,0,0,0));
 
 		pomodoro=new Pomodoro();
 		title=new TitleBar();
 		list=new List();
 		btnPanel=new ButtonPanel();
-		todoPanel.setPreferredSize(new Dimension(300,500));
 		todoPanel.setLayout(new BorderLayout());
-
-		// JScrollPane scrollTasks=new JScrollPane(list,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		todoPanel.setSize(700, 400);
+		JScrollPane scrollTasks=new JScrollPane(list,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		
 		this.add(title,BorderLayout.NORTH);
-		todoPanel.add(list,BorderLayout.WEST);
+		todoPanel.add(scrollTasks,BorderLayout.CENTER);
 		todoPanel.add(btnPanel,BorderLayout.SOUTH);
-		this.add(todoPanel,BorderLayout.CENTER);
+		this.add(todoPanel,BorderLayout.WEST);
 		this.add(pomodoro,BorderLayout.EAST);
 		addTask=btnPanel.getAddTask();
 		clear= btnPanel.getClear();
@@ -39,7 +38,6 @@ public class WindowFrame extends JFrame{
 		this.setMinimumSize(new Dimension(800,650));
 		this.pack();
 		this.setVisible(true);
-		// this.add(scrollTasks);
 	}
 
 	public void addListeners(){
