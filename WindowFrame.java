@@ -23,13 +23,12 @@ public class WindowFrame extends JFrame{
 		list=new List();
 		btnPanel=new ButtonPanel();
 		todoPanel.setLayout(new BorderLayout());
-		todoPanel.setSize(700, 400);
+		todoPanel.setSize(750, 400);
 		todoPanel.setBackground(new Color(54,57,63));
 		list.setBackground(new Color(54,57,63));
 		title.setBackground(new Color(115,135,180));
 		btnPanel.setBackground(new Color(54,57,63));
 		JScrollPane scrollTasks=new JScrollPane(list,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollTasks.setComponentZOrder(scrollTasks.getVerticalScrollBar(), 0);
 		scrollTasks.setBackground(new Color(54,57,63));
 		scrollTasks.setBorder(BorderFactory.createEmptyBorder());
 		
@@ -37,7 +36,7 @@ public class WindowFrame extends JFrame{
 		todoPanel.add(scrollTasks,BorderLayout.CENTER);
 		todoPanel.add(btnPanel,BorderLayout.SOUTH);
 		this.add(todoPanel,BorderLayout.WEST);
-		this.add(pomodoro,BorderLayout.EAST);
+		this.add(pomodoro,BorderLayout.CENTER);
 		addTask=btnPanel.getAddTask();
 		clear= btnPanel.getClear();
 

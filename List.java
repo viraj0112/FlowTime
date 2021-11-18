@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class List extends JPanel{
 	List(){
-		GridLayout layout= new GridLayout(20,1,7,1);
+		GridLayout layout= new GridLayout(20,1,6,1);
 		layout.setVgap(10);
 		this.setLayout(layout);
 	}
@@ -13,9 +13,12 @@ public class List extends JPanel{
 	public void updateNumbers(){
 		Component[] listItems= this.getComponents();
 
-		for(int i=0;i<listItems.length;i++){
+		for(int i=0;i<(listItems.length);i++){
 			if(listItems[i] instanceof Task){
 				((Task)listItems[i]).changeIndex(i+1);
+				if(i>=20){
+					this.remove((Task)listItems[i]);
+				}
 			}
 		}
 	}

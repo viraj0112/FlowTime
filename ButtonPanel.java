@@ -2,6 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+
 public class ButtonPanel extends JPanel{
 	JButton addTask;
 	JButton clear;
@@ -12,7 +13,7 @@ public class ButtonPanel extends JPanel{
 
 		addTask= new JButton("Add new task");
 		addTask.setPreferredSize(new Dimension(150,50));
-		addTask.setBorder(BorderFactory.createEmptyBorder());
+		addTask.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
 		addTask.setFont(new Font("Manjari",Font.BOLD, 15));
 		addTask.setForeground(Color.white);
 		addTask.setBackground(new Color(59,165,93));

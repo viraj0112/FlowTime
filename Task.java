@@ -33,7 +33,6 @@ public class Task extends JPanel{
 		done.setPreferredSize(new Dimension(40,20));
 		done.setBorder(BorderFactory.createEmptyBorder());
 		done.setBackground(new Color(59,165,93));
-
 		this.add(done,BorderLayout.EAST);
 	}
 

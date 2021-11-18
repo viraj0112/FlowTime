@@ -1,13 +1,27 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.awt.Graphics;
+
 
 public class Pomodoro extends JPanel implements ActionListener{
 	JPanel pomoControl=new JPanel();
-
+	ImageIcon img=new ImageIcon("bgCircle.jpg");
 	JButton startButton=new JButton("Start");
 	JButton resetButton=new JButton("Reset");
 	JLabel timeLabel= new JLabel();
+    // {
+    //   Image img = icon.getImage();
+    //   // instance initializer
+    //   {setOpaque(false);}	
+    //   public void paintComponent(Graphics graphics) 
+    //   {
+    //     graphics.drawImage(img, 0, 0, this);
+    //     this.paintComponent(graphics);
+    //   }
+    // };
+
+	JLabel bg=new JLabel();
 	int elapsedTime= 0;
 	int sec=0;
 	int min=0;
@@ -41,8 +55,9 @@ public class Pomodoro extends JPanel implements ActionListener{
 
 	});
 
-
 	Pomodoro(){
+		bg.setIcon(new ImageIcon("bgCircle.jpg"));
+		bg.setLayout(null);
 
 		this.setPreferredSize(new Dimension(400,500));
 		this.setLayout(new BorderLayout());
@@ -52,9 +67,8 @@ public class Pomodoro extends JPanel implements ActionListener{
 		timeLabel.setPreferredSize(new Dimension(200,100));
 		timeLabel.setFont(new Font("MONOSPACED",Font.PLAIN,50));
 		timeLabel.setForeground(new Color(255,255,255));
-		timeLabel.setBackground(new Color(54,57,63));
-  		timeLabel.setBorder(BorderFactory.createEmptyBorder());
-		timeLabel.setOpaque(true);
+  		timeLabel.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+		timeLabel.setOpaque(false);
   		timeLabel.setHorizontalAlignment(JLabel.CENTER);
 
 		startButton.setPreferredSize(new Dimension(100,50));
@@ -73,7 +87,8 @@ public class Pomodoro extends JPanel implements ActionListener{
 		resetButton.setForeground(Color.white);
 		resetButton.setBackground(new Color(79,84,92));
 		pomoControl.setBackground(new Color(54,57,63));
-
+		
+		this.add(bg,BorderLayout.CENTER);
 		this.add(timeLabel,BorderLayout.CENTER);
 		pomoControl.add(startButton);
 		pomoControl.add(Box.createHorizontalStrut(18));
