@@ -15,7 +15,8 @@ public class WindowFrame extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("TempoBoy");
 		this.setPreferredSize(new Dimension(800,650));
-		// this.setBackground(Color.(0,0,0,0));
+		// this.setUndecorated(true);
+		this.setBackground(new Color(54,57,63));
 
 		pomodoro=new Pomodoro();
 		title=new TitleBar();
@@ -23,7 +24,14 @@ public class WindowFrame extends JFrame{
 		btnPanel=new ButtonPanel();
 		todoPanel.setLayout(new BorderLayout());
 		todoPanel.setSize(700, 400);
+		todoPanel.setBackground(new Color(54,57,63));
+		list.setBackground(new Color(54,57,63));
+		title.setBackground(new Color(115,135,180));
+		btnPanel.setBackground(new Color(54,57,63));
 		JScrollPane scrollTasks=new JScrollPane(list,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollTasks.setComponentZOrder(scrollTasks.getVerticalScrollBar(), 0);
+		scrollTasks.setBackground(new Color(54,57,63));
+		scrollTasks.setBorder(BorderFactory.createEmptyBorder());
 		
 		this.add(title,BorderLayout.NORTH);
 		todoPanel.add(scrollTasks,BorderLayout.CENTER);

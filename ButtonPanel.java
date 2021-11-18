@@ -13,7 +13,9 @@ public class ButtonPanel extends JPanel{
 		addTask= new JButton("Add new task");
 		addTask.setPreferredSize(new Dimension(150,50));
 		addTask.setBorder(BorderFactory.createEmptyBorder());
-		addTask.setFont(new Font("MONOSPACED",Font.BOLD, 13));
+		addTask.setFont(new Font("Manjari",Font.BOLD, 15));
+		addTask.setForeground(Color.white);
+		addTask.setBackground(new Color(59,165,93));
 		addTask.setFocusable(false);
 		this.add(addTask);
 
@@ -22,7 +24,9 @@ public class ButtonPanel extends JPanel{
 		clear= new JButton("Clear finished Task");
 		clear.setPreferredSize(new Dimension(170,50));
 		clear.setBorder(BorderFactory.createEmptyBorder());
-		clear.setFont(new Font("MONOSPACED",Font.BOLD,13));
+		clear.setFont(new Font("Manjari",Font.BOLD,15));
+		clear.setForeground(Color.white);
+		clear.setBackground(new Color(237,66,69));
 		clear.setFocusable(false);
 		this.add(clear);
 	}

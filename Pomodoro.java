@@ -46,26 +46,37 @@ public class Pomodoro extends JPanel implements ActionListener{
 
 		this.setPreferredSize(new Dimension(400,500));
 		this.setLayout(new BorderLayout());
+		this.setOpaque(true);
+		this.setBackground(new Color(54,57,63));
 		timeLabel.setText(hourString+":"+minString+":"+secString);
 		timeLabel.setPreferredSize(new Dimension(200,100));
 		timeLabel.setFont(new Font("MONOSPACED",Font.PLAIN,50));
-  		timeLabel.setBorder(BorderFactory.createBevelBorder(1));
+		timeLabel.setForeground(new Color(255,255,255));
+		timeLabel.setBackground(new Color(54,57,63));
+  		timeLabel.setBorder(BorderFactory.createEmptyBorder());
+		timeLabel.setOpaque(true);
   		timeLabel.setHorizontalAlignment(JLabel.CENTER);
 
 		startButton.setPreferredSize(new Dimension(100,50));
 		startButton.setFont(new Font("MONOSPACED",Font.PLAIN,20));
 		startButton.setFocusable(false);
-	  	startButton.setBorder(BorderFactory.createBevelBorder(1));
+	  	startButton.setBorder(BorderFactory.createEmptyBorder());
+	  	startButton.setForeground(Color.white);
+	  	startButton.setBackground(new Color(79,84,92));
 		startButton.addActionListener(this);
 
 		resetButton.setPreferredSize(new Dimension(100,50));
 		resetButton.setFont(new Font("MONOSPACED",Font.PLAIN,20));
 		resetButton.setFocusable(false);
 		resetButton.addActionListener(this);
-		resetButton.setBorder(BorderFactory.createBevelBorder(1));
+		resetButton.setBorder(BorderFactory.createEmptyBorder());
+		resetButton.setForeground(Color.white);
+		resetButton.setBackground(new Color(79,84,92));
+		pomoControl.setBackground(new Color(54,57,63));
 
 		this.add(timeLabel,BorderLayout.CENTER);
 		pomoControl.add(startButton);
+		pomoControl.add(Box.createHorizontalStrut(18));
 		pomoControl.add(resetButton);
 		this.add(pomoControl,BorderLayout.SOUTH);
 	}
