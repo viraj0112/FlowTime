@@ -40,27 +40,36 @@ public class Task extends JPanel{
 		this.setPreferredSize(new Dimension(370,40));
 		this.setLayout(new BorderLayout());
 
-		status=(b=="1")? true : false;
-
+		if(Integer.parseInt(b)==1)
+			status=true;
+		else
+			status=false;
+		
 		srno= new JLabel();
 		srno.setPreferredSize(new Dimension(20,20));
 		srno.setHorizontalAlignment(JLabel.CENTER);
 		srno.setForeground(new Color(255,255,255));
 		srno.setBackground(new Color(54,57,63));
 		srno.setOpaque(true);
-		this.add(srno,BorderLayout.WEST);
-
+		
 		taskName= new JTextField(a);
 		taskName.setBorder(BorderFactory.createEmptyBorder());
 		taskName.setBackground(Color.gray);
 		taskName.setForeground(new Color(255,255,255));
 
-		this.add(taskName,BorderLayout.CENTER);
-
 		done= new JButton("Done");
 		done.setPreferredSize(new Dimension(40,20));
 		done.setBorder(BorderFactory.createEmptyBorder());
 		done.setBackground(new Color(59,165,93));
+		System.out.println(status);
+
+		if(status){
+			taskName.setBackground(new Color(59,165,93));
+			done.setBackground(new Color(86,138,196));
+		}
+
+		this.add(srno,BorderLayout.WEST);
+		this.add(taskName,BorderLayout.CENTER);
 		this.add(done,BorderLayout.EAST);
 	}
 

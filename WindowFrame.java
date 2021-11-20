@@ -63,9 +63,16 @@ public class WindowFrame extends JFrame{
                 	ResultSet rs=stmt.executeQuery("select * from tasklist");
                 	
                 	while(rs.next()){
-                		Task task=new Task(rs.getString(1), rs.getString(2));            		
+                		Task task=new Task(rs.getString(1), rs.getString(2));
+                		
                 		list.add(task);
                 		list.updateNumbers();
+
+                		task.getDone().addMouseListener(new MouseAdapter(){
+							public void mousePressed(MouseEvent e){
+								task.changeState();
+							}
+						});
                 	}
                 	rs.close();
                 	stmt.close();
@@ -74,6 +81,8 @@ public class WindowFrame extends JFrame{
                 }catch(SQLException ex){
                 	System.out.println("Error:"+ex);
                 }
+
+
 
         	}
 
@@ -90,7 +99,7 @@ public class WindowFrame extends JFrame{
 					for(int i=0;i<(listItems.length);i++){
 						if(listItems[i] instanceof Task){
 							stmt.executeUpdate("insert into tasklist values('"+((Task)listItems[i]).getTaskName()+"','"+((Task)listItems[i]).getIntStatus()+"')");
-							System.out.println(((Task)listItems[i]).getTaskName()+"\t"+((Task)listItems[i]).getIntStatus()+"\n");
+							System.out.println(((Task)listItems[i]).getTaskName()+"\t"+((Task)listItems[i]).getIntStatus());
 							}
 						}
 						stmt.close();
