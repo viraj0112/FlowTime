@@ -26,6 +26,7 @@ public class Task extends JPanel{
 		taskName.setBorder(BorderFactory.createEmptyBorder());
 		taskName.setBackground(Color.gray);
 		taskName.setForeground(new Color(255,255,255));
+		taskName.setCaretColor(Color.white);
 
 		this.add(taskName,BorderLayout.CENTER);
 
@@ -61,7 +62,7 @@ public class Task extends JPanel{
 		done.setPreferredSize(new Dimension(40,20));
 		done.setBorder(BorderFactory.createEmptyBorder());
 		done.setBackground(new Color(59,165,93));
-		System.out.println(status);
+
 
 		if(status){
 			taskName.setBackground(new Color(59,165,93));

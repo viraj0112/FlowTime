@@ -99,7 +99,7 @@ public class WindowFrame extends JFrame{
 					for(int i=0;i<(listItems.length);i++){
 						if(listItems[i] instanceof Task){
 							stmt.executeUpdate("insert into tasklist values('"+((Task)listItems[i]).getTaskName()+"','"+((Task)listItems[i]).getIntStatus()+"')");
-							System.out.println(((Task)listItems[i]).getTaskName()+"\t"+((Task)listItems[i]).getIntStatus());
+							// System.out.println(((Task)listItems[i]).getTaskName()+"\t"+((Task)listItems[i]).getIntStatus());
 							}
 						}
 						stmt.close();
