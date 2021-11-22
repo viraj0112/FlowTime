@@ -14,10 +14,12 @@ public class WindowFrame extends JFrame{
 
 	WindowFrame(){
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		this.setTitle("TempoBoy");
+		this.setTitle("FlowTime App");
 		this.setPreferredSize(new Dimension(800,650));
 		// this.setUndecorated(true);
 		this.setBackground(new Color(54,57,63));
+		ImageIcon image = new ImageIcon("time.png");
+		this.setIconImage(image.getImage());
 
 		pomodoro=new Pomodoro();
 		title=new TitleBar();
