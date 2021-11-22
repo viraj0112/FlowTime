@@ -10,16 +10,7 @@ public class Pomodoro extends JPanel implements ActionListener{
 	JButton startButton=new JButton("Start");
 	JButton resetButton=new JButton("Reset");
 	JLabel timeLabel= new JLabel();
-    // {
-    //   Image img = icon.getImage();
-    //   // instance initializer
-    //   {setOpaque(false);}	
-    //   public void paintComponent(Graphics graphics) 
-    //   {
-    //     graphics.drawImage(img, 0, 0, this);
-    //     this.paintComponent(graphics);
-    //   }
-    // };
+	JLabel bgLabel=new JLabel(img);
 
 	JLabel bg=new JLabel();
 	int elapsedTime= 0;
@@ -63,11 +54,14 @@ public class Pomodoro extends JPanel implements ActionListener{
 		this.setLayout(new BorderLayout());
 		this.setOpaque(true);
 		this.setBackground(new Color(54,57,63));
+		bgLabel.setLayout(new BorderLayout());
+
 		timeLabel.setText(hourString+":"+minString+":"+secString);
 		timeLabel.setPreferredSize(new Dimension(200,100));
-		timeLabel.setFont(new Font("MONOSPACED",Font.PLAIN,50));
+		timeLabel.setFont(new Font("MONOSPACED",Font.PLAIN,45));
 		timeLabel.setForeground(new Color(255,255,255));
   		timeLabel.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+  		timeLabel.setBackground(new Color(0,0,0,0));
 		timeLabel.setOpaque(false);
   		timeLabel.setHorizontalAlignment(JLabel.CENTER);
 
@@ -88,8 +82,8 @@ public class Pomodoro extends JPanel implements ActionListener{
 		resetButton.setBackground(new Color(79,84,92));
 		pomoControl.setBackground(new Color(54,57,63));
 		
-		this.add(bg,BorderLayout.CENTER);
-		this.add(timeLabel,BorderLayout.CENTER);
+		this.add(bgLabel,BorderLayout.CENTER);
+		bgLabel.add(timeLabel,BorderLayout.CENTER);
 		pomoControl.add(startButton);
 		pomoControl.add(Box.createHorizontalStrut(18));
 		pomoControl.add(resetButton);
