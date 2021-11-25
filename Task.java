@@ -58,7 +58,7 @@ public class Task extends JPanel{
 		taskName.setBackground(Color.gray);
 		taskName.setForeground(new Color(255,255,255));
 
-		done= new JButton("Done");
+		done= new JButton("done");
 		done.setPreferredSize(new Dimension(40,20));
 		done.setBorder(BorderFactory.createEmptyBorder());
 		done.setBackground(new Color(59,165,93));
