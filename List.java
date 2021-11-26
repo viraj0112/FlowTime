@@ -35,4 +35,17 @@ public class List extends JPanel{
 		}
 
 	}
+
+	public void removeTask1(){
+		Component[] listItems= this.getComponents();
+
+		for(int i=0;i<listItems.length;i++){
+			if(listItems[i] instanceof Task){
+				if(((Task)listItems[i]).getSrNo().getText() == "1"){
+					this.remove((Task)listItems[i]);
+				};
+			}
+		}
+
+	}
 }
