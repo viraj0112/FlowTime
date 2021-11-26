@@ -9,7 +9,7 @@ public class WindowFrame extends JFrame{
 	ButtonPanel btnPanel;
 	Pomodoro pomodoro;
 	List list= new List();
-	JButton addTask, done, clear;
+	JButton addTask, done, clear, settingButton;
 	JPanel todoPanel= new JPanel();
 
 	WindowFrame(){
@@ -33,6 +33,7 @@ public class WindowFrame extends JFrame{
 		
 		addTask=btnPanel.getAddTask();
 		clear= btnPanel.getClear();
+		settingButton=title.getSettingButton();
 
 		addListeners();
 		JScrollPane scrollTasks=new JScrollPane(list,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
@@ -126,6 +127,17 @@ public class WindowFrame extends JFrame{
 				});
 				revalidate();
 			}
+		});
+
+		settingButton.addMouseListener(new MouseAdapter(){
+			public void mousePressed(MouseEvent e) {				
+				NewWindow newwindow = new NewWindow();
+				try{
+					pomodoro.timeoutTime=newwindow.a;
+				}catch(Exception ex){
+					pomodoro.timeoutTime=25;
+				}
+			} 
 		});
 
 		clear.addMouseListener(new MouseAdapter(){

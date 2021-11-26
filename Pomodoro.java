@@ -11,6 +11,8 @@ public class Pomodoro extends JPanel implements ActionListener{
 	JButton resetButton=new JButton("Reset");
 	JLabel timeLabel= new JLabel();
 	JLabel bgLabel=new JLabel(img);
+	TitleBar titlebar=new TitleBar();
+	int timeoutTime=25;
 
 	JLabel bg=new JLabel();
 	int elapsedTime= 0;
@@ -36,9 +38,9 @@ public class Pomodoro extends JPanel implements ActionListener{
 			hourString= String.format("%02d",hours);
 			timeLabel.setText(hourString+":"+minString+":"+secString);
 
-			if(min==25){
-				timer.stop();
 
+			if(elapsedTime>=(timeoutTime*60*1000)){
+				timer.stop();
 				JOptionPane.showConfirmDialog((Component) null,"Take a short Break. If the task is over mark it as done and if it isn't then complete it after the break","Take A Break", JOptionPane.PLAIN_MESSAGE);
 			}
 

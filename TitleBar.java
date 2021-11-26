@@ -14,17 +14,13 @@ public class TitleBar extends JPanel{
 		titleText.setHorizontalAlignment(JLabel.CENTER);
 
 		this.add(titleText);
+		this.add(settingButton);
 		
 		settingButton.setBounds(100, 160, 200, 40);
 		settingButton.setFocusable(false);
-		settingButton.addActionListener(this);
 	}
 	
-	@Override
-		public void actionPerformed(ActionEvent e){
-			if (e.getSource()== settingButton) {
-				
-				NewWindow newwindow = new NewWindow();
-			} 
-		}
+	JButton getSettingButton(){
+		return settingButton;
+	}
 }

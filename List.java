@@ -33,7 +33,6 @@ public class List extends JPanel{
 				};
 			}
 		}
-
 	}
 
 	public void removeTask1(){

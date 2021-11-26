@@ -1,20 +1,17 @@
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
-public class NewWindow {
 
-    JFrame frame = new JFrame();
+public class NewWindow{
+    int a;
 
     NewWindow(){
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(420,420);
-        frame.setLayout(null);
-        frame.setVisible(true);
-        frame.dispose();
-        String temp;
-        temp = JOptionPane.showInputDialog(null, "Time: ");
-        int a = Integer.parseInt(temp);
+        String temp = JOptionPane.showInputDialog(null, "Time: ");
+        System.out.println(temp);
+        a = Integer.parseInt(temp);
+        
         // temp = JOptionPane.showInputDialog(parentComponent, message)
-        JOptionPane.showMessageDialog(null, "Time setted: ");
+        JOptionPane.showMessageDialog(null, "Time setted: "+a);
     }
 }

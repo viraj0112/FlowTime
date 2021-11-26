@@ -104,4 +104,8 @@ public class Task extends JPanel{
 		int val = (status) ? 1 : 0;
 		return val;
 	}
+
+	public JLabel getSrNo(){
+		return srno;
+	}
 }
