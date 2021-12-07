@@ -9,3 +9,6 @@ javac WindowFrame.java
 java WindowFrame
 ```
 <img src="https://cdn.discordapp.com/attachments/905074139327516691/917692544643657728/unknown.png">
+
+- One can have upto 20 pending tasks at once
+- The default timer is set to 25 mins per task with can be changes using the `settings option`
