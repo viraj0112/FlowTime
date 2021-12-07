@@ -16,7 +16,9 @@ public class TitleBar extends JPanel{
 		this.add(titleText);
 		this.add(settingButton);
 		
-		settingButton.setBounds(100, 160, 200, 40);
+		settingButton.setBounds(100, 160, 200, 60);
+		settingButton.setBackground(new Color(139,156,225));
+		settingButton.setForeground(Color.white);
 		settingButton.setFocusable(false);
 	}
 	

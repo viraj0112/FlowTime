@@ -8,3 +8,4 @@ javac WindowFrame.java
 ```shell
 java WindowFrame
 ```
+<img src="https://cdn.discordapp.com/attachments/905074139327516691/917692544643657728/unknown.png">
