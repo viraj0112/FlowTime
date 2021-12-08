@@ -40,9 +40,14 @@ public class Pomodoro extends JPanel implements ActionListener{
 
 
 			if(elapsedTime>=(timeoutTime*60*1000)){
-				timer.stop();
 				Toolkit.getDefaultToolkit().beep();
+				timer.stop();
+				
 				JOptionPane.showConfirmDialog((Component) null,"Take a short Break. If the task is over mark it as done and if it isn't then complete it after the break","Take A Break", JOptionPane.PLAIN_MESSAGE);
+				
+				new Reminder(5);
+				Toolkit.getDefaultToolkit().beep();
+				JOptionPane.showConfirmDialog((Component) null, "Break to be started of about 5 minutes.","Break timer.", JOptionPane.PLAIN_MESSAGE);
 			}
 
 		}
